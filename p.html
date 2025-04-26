@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ambar's Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #ecc7c7;
+        color: #333;
+        scroll-behavior: smooth;
+      }
+
+      header {
+        background: #111;
+        color: white;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+      }
+
+      nav a {
+        color: white;
+        margin-left: 1.5rem;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover {
+        color: #99f2c8;
+      }
+
+      #hero {
+        height: 100vh;
+        background: linear-gradient(to right, #ddf50a, #ca99f2);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 1rem;
+        animation: gradientBoom 2s ease-out forwards;
+      }
+      @keyframes gradientBoom {
+        0% {
+          transform: scale(0.5);
+          opacity: 0;
+          background: linear-gradient(45deg, #ff5733, #f39c12);
+        }
+        50% {
+          transform: scale(1.2);
+          opacity: 0.8;
+          background: linear-gradient(45deg, #f39c12, #3498db);
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+          background: linear-gradient(45deg, #3498db, #2ecc71);
+        }
+      }
+      #hero h1 {
+        font-size: 3rem;
+        animation: fadeIn 2s ease;
+      }
+
+      #hero p {
+        font-size: 1.3rem;
+        margin: 1rem 0;
+        animation: fadeIn 3s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .btn,
+      .btn-outline {
+        padding: 0.8rem 1.5rem;
+        border-radius: 6px;
+        text-decoration: none;
+        margin: 0.5rem;
+        font-weight: 600;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+      }
+
+      .btn:hover,
+      .btn-outline:hover {
+        transform: scale(1.05);
+      }
+
+      .btn {
+        background: white;
+        color: #1f4037;
+      }
+
+      .btn-outline {
+        border: 2px solid white;
+        color: white;
+        background: transparent;
+      }
+
+      section {
+        padding: 5rem 2rem;
+        margin-top: 80px;
+      }
+
+      section h2 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+        color: #1f4037;
+        animation: fadeIn 2s ease;
+      }
+
+      .about-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+      }
+      @keyframes boomEffect {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 0 rgba(255, 105, 180, 0.7);
+        }
+        50% {
+          transform: scale(1.1);
+          box-shadow: 0 0 25px rgba(255, 105, 180, 0.7);
+        }
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 rgba(255, 105, 180, 0.7);
+        }
+      }
+
+      .profile-pic {
+        width: 200px;
+        height: 300px;
+        border-radius: 50%;
+        border: 5px solid #1f4037;
+        transition: transform 0.3s ease;
+        object-fit: cover;
+        cursor: pointer;
+      }
+
+      .profile-pic:hover {
+        animation: boomEffect 0.6s ease-in-out;
+      }
+
+      .bio {
+        padding: 1rem;
+        background: white;
+        border-radius: 10px;
+        transition: transform 0.4s ease, box-shadow 0.4s ease,
+          background 0.4s ease;
+      }
+
+      .bio:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        background: linear-gradient(135deg, #df85e5, #c3f5c9);
+        color: #111;
+      }
+
+      .card {
+        background: white;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin: 1rem auto;
+        max-width: 600px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        background: linear-gradient(135deg, #df85e5, #c3f5c9);
+        color: #111;
+      }
+      .card h3 {
+        margin-bottom: 1rem;
+        color: #1f4037;
+      }
+      .card h3:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        background: linear-gradient(135deg, #df85e5, #c3f5c9);
+        color: #111;
+      }
+      .project-link:hover {
+        display: inline-block;
+        margin-top: 1rem;
+        color: #b82929;
+        text-decoration: underline;
+        animation: lightBoom 3s ease-in-out;
+        text-shadow: 0 0 10px rgba(249, 79, 79, 0.7),
+          0 0 20px rgba(248, 100, 230, 0.6), 0 0 30px rgba(0, 255, 200, 0.5);
+        color: #110707;
+        transition: text-shadow 0.7s ease;
+      }
+
+      .skill-card {
+        background: white;
+        padding: 1.5rem;
+        margin: 1rem auto;
+        max-width: 500px;
+        border-left: 6px solid #1f4037;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      .skill-card :hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        background: linear-gradient(135deg, #df85e5, #c3f5c9);
+        color: #111;
+      }
+
+      .skill-card h3 {
+        margin-bottom: 0.5rem;
+        color: #1f4037;
+      }
+      .skill-card h3:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        background: linear-gradient(135deg, #df85e5, #c3f5c9);
+        color: #111;
+      }
+      #contact {
+        text-align: center;
+      }
+
+      footer {
+        background: #111;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        margin-top: 4rem;
+      }
+      h1:hover,
+      h2:hover,
+      h3:hover {
+        animation: lightBoom 0.6s ease-in-out;
+        text-shadow: 0 0 10px rgba(249, 79, 79, 0.7),
+          0 0 20px rgba(248, 100, 230, 0.6), 0 0 30px rgba(0, 255, 200, 0.5);
+        color: #110707;
+        transition: text-shadow 0.3s ease;
+      }
+
+      @keyframes lightBoom {
+        0% {
+          transform: scale(1);
+          text-shadow: none;
+        }
+        50% {
+          transform: scale(1.1);
+          text-shadow: 0 0 20px rgba(0, 255, 255, 0.8),
+            0 0 30px rgba(0, 255, 200, 0.6);
+        }
+        100% {
+          transform: scale(1);
+          text-shadow: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div><strong>Ambar</strong></div>
+      <nav>
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section id="hero">
+      <h1 data-aos="fade-down">Hi, I'm Ambar!</h1>
+      <p data-aos="fade-up">
+        Full Stack Developer | Tech Enthusiast | Problem Solver
+      </p>
+      <a href="#projects" class="btn" data-aos="zoom-in">View Projects</a>
+      <a
+        href="/HTML/PortF/Bold modern resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-outline"
+      >
+        View Resume
+      </a>
+    </section>
+
+    <section id="about" data-aos="fade-left">
+      <h2><span>About Me</span></h2>
+      <div class="about-content">
+        <img
+          src="/HTML/PortF/pic/photo_2025-04-23 9.58.59 PM.jpeg"
+          alt="Ambar's Profile Picture"
+          class="profile-pic"
+        />
+        <div class="bio">
+          <p>
+            Hello! I’m Ambar, a passionate Full Stack Developer with a love for
+            solving complex problems. I specialize in building responsive and
+            scalable web applications. With a background in various technologies
+            such as HTML, CSS, JavaScript, and backend development, I aim to
+            create efficient and user-friendly solutions. Let's connect!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" data-aos="fade-up">
+      <h2><span>My Projects</span></h2>
+      <div class="card" data-aos="fade-up">
+        <h3>Project One</h3>
+        <p>
+          Detailed description of project one goes here. It’s a responsive web
+          application built using modern web technologies.
+        </p>
+        <a href="https://github.com/account" class="project-link"
+          >View on GitHub</a
+        >
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="200">
+        <h3>Project Two</h3>
+        <p>
+          This project is focused on creating a dynamic dashboard with real-time
+          data. It's built using React and Node.js.
+        </p>
+        <a href="https://github.com/account" class="project-link"
+          >View on GitHub</a
+        >
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2><span>Skills</span></h2>
+
+      <div class="skill-card" data-aos="fade-up">
+        <h3>HTML & CSS</h3>
+        <p>Building responsive layouts and modern UI designs</p>
+      </div>
+
+      <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+        <h3>JavaScript</h3>
+        <p>Creating interactive features and solving complex problems</p>
+      </div>
+
+      <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+        <h3>React</h3>
+        <p>Developing dynamic single-page applications</p>
+      </div>
+
+      <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+        <h3>C</h3>
+        <p>
+          Strong understanding of procedural programming and memory management
+        </p>
+      </div>
+
+      <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
+        <h3>C++</h3>
+        <p>Proficient in object-oriented design, STL, and competitive coding</p>
+      </div>
+
+      <div class="skill-card" data-aos="fade-up" data-aos-delay="500">
+        <h3>Python</h3>
+        <p>
+          Used for scripting, data analysis, and problem-solving with libraries
+        </p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2><span>Contact Me</span></h2>
+      <p>If you'd like to get in touch, feel free to reach out!</p>
+      <br />
+      <a href="mailto:raj@example.com" class="btn">Send an Email</a>
+      <div style="margin-top: 1.5rem; font-size: 1.8rem">
+        <a
+          href="https://www.linkedin.com/in/ambar-gupta-095347291/"
+          target="_blank"
+          style="margin: 0 1rem; color: #0077b5"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a
+          href="https://leetcode.com/u/cqh92hexfD"
+          target="_blank"
+          style="margin: 0 1rem; color: #ffa116"
+          ><i class="fa-solid fa-code"></i
+        ></a>
+        <section id="testimonials">
+          <h2>Testimonials</h2>
+          <div class="card">
+            <p>
+              "Ambar is a brilliant developer with exceptional problem-solving
+              skills!"
+            </p>
+            <h4>– Professor XYZ</h4>
+          </div>
+        </section>
+      </div>
+    </section>
+    <footer>
+      <p>&copy; 2025 Ambar. All rights reserved.</p>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- JavaScript: Load AOS and initialize -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      // Initialize AOS animation
+      AOS.init({
+        duration: 1000, // duration of animation in ms
+        once: true, // animate only once when scrolling down
+      });
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            window.scrollTo({
+              top: target.offsetTop - 60, // adjust for header height
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+      console.log("Welcome to Ambar's Portfolio 🚀");
+    </script>
+  </body>
+</html>
