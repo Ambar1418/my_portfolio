@@ -22,8 +22,7 @@
 
       body {
         font-family: "Poppins", sans-serif;
-        background: #ecc7c7;
-        color: #333;
+        color: #ddd;
         scroll-behavior: smooth;
       }
 
@@ -50,6 +49,9 @@
 
       nav a:hover {
         color: #99f2c8;
+      }
+      .main {
+        display: flex;
       }
 
       #hero {
@@ -83,13 +85,28 @@
       }
       #hero h1 {
         font-size: 3rem;
-        animation: fadeIn 2s ease;
       }
-
       #hero p {
         font-size: 1.3rem;
         margin: 1rem 0;
-        animation: fadeIn 3s ease;
+        animation: fadeIn 3s ease, gradient 2s ease-out forwards;
+      }
+      @keyframes gradient {
+        0% {
+          transform: scale(0.5);
+          opacity: 0;
+          background: linear-gradient(45deg, #141f49, #f39c12);
+        }
+        50% {
+          transform: scale(1.2);
+          opacity: 0.8;
+          background: linear-gradient(45deg, #181208, #3498db);
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+          background: linear-gradient(45deg, #113751, #074f25);
+        }
       }
 
       @keyframes fadeIn {
@@ -141,7 +158,7 @@
         text-align: center;
         margin-bottom: 3rem;
         position: relative;
-        color: #1f4037;
+        color: #cdc5c56f;
         animation: fadeIn 2s ease;
       }
 
@@ -155,38 +172,37 @@
       @keyframes boomEffect {
         0% {
           transform: scale(1);
-          box-shadow: 0 0 0 rgba(255, 105, 180, 0.7);
+          box-shadow: 0 0 0 rgba(242, 243, 234, 0.481);
         }
         50% {
           transform: scale(1.1);
-          box-shadow: 0 0 25px rgba(255, 105, 180, 0.7);
+          box-shadow: 0 0 25px rgba(244, 241, 242, 0.7);
         }
         100% {
           transform: scale(1);
-          box-shadow: 0 0 0 rgba(255, 105, 180, 0.7);
+          box-shadow: 0 0 0 #ef7682b3;
         }
       }
 
       .profile-pic {
-        width: 300px;
-        height: 400px;
+        width: 350px;
+        height: 500px;
         border-radius: 50%;
-        border: 5px solid #1f4037;
+        border: 5px solid #0d0118;
         transition: transform 0.3s ease;
         object-fit: cover;
         cursor: pointer;
       }
 
       .profile-pic:hover {
-        animation: boomEffect 0.6s ease-in-out;
+        animation: boomEffect 0.9s ease-in-out;
       }
 
       .bio {
         padding: 1rem;
         background: white;
         border-radius: 10px;
-        transition: transform 0.4s ease, box-shadow 0.4s ease,
-          background 0.4s ease;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
       }
 
       .bio:hover {
@@ -241,7 +257,7 @@
         border-left: 6px solid #1f4037;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       }
-      .skill-card :hover {
+      .skill-card:hover {
         transform: translateY(-5px);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         background: linear-gradient(135deg, #df85e5, #c3f5c9);
@@ -261,7 +277,42 @@
       #contact {
         text-align: center;
       }
-
+      body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    .icon-section {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .icon-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+      font-size: 14px;
+    }
+    .icon {
+      font-size: 40px;
+      margin-bottom: 5px;
+    }
+    .linkedin { color: #0077b5; }
+    .instagram { color: #c32aa3; }
+    .github { color: #fbe869; }
+    .hackerearth { color: #323754; }
+    .gfg { color: #2f8d46; }
+    .leetcode { color: #f89f1b; }
+    .custom-svg {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 5px;
+    }
       footer {
         background: #111;
         color: white;
@@ -273,12 +324,30 @@
       h2:hover,
       h3:hover {
         animation: lightBoom 0.6s ease-in-out;
-        text-shadow: 0 0 10px rgba(249, 79, 79, 0.7),
-          0 0 20px rgba(248, 100, 230, 0.6), 0 0 30px rgba(0, 255, 200, 0.5);
-        color: #110707;
+        text-shadow: 0 0 10px rgba(67, 5, 30, 0.7),
+          0 0 20px rgba(17, 2, 47, 0.6), 0 0 30px rgba(0, 255, 200, 0.5);
+        color: #169a65;
         transition: text-shadow 0.3s ease;
       }
+      .custom-svg {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 5px;
+}
 
+.gfg {
+  color: #2f8d46;
+}
+.leetcode {
+  color: #f89f1b;
+}
+.hackerearth {
+  color: #323754;
+}
+
+.codolio {
+  color: #f15218;
+}
       @keyframes lightBoom {
         0% {
           transform: scale(1);
@@ -310,12 +379,10 @@
 
     <section id="hero">
       <h1 data-aos="fade-down">Hi, I'm Ambar!</h1>
-      <p data-aos="fade-up">
-        Full Stack Developer | Tech Enthusiast | Problem Solver
-      </p>
+      <p data-aos="fade-up">Student | Tech Enthusiast | Problem Solver</p>
       <a href="#projects" class="btn" data-aos="zoom-in">View Projects</a>
       <a
-        href="/HTML/PortF/Bold modern resume.pdf"
+        href="/Users/prashant/Downloads/ag.pdf"
         target="_blank"
         rel="noopener noreferrer"
         class="btn-outline"
@@ -334,11 +401,33 @@
         />
         <div class="bio">
           <p>
-            Hello! I’m Ambar, a passionate Full Stack Developer with a love for
-            solving complex problems. I specialize in building responsive and
-            scalable web applications. With a background in various technologies
-            such as HTML, CSS, JavaScript, and backend development, I aim to
-            create efficient and user-friendly solutions. Let's connect!
+            Hello! I’m Ambar, a passionate Student with a love for solving
+            complex problems. I specialize in building responsive and scalable
+            web applications. With a background in various technologies such as
+            HTML, CSS, JavaScript, and backend development, I aim to create
+            efficient and user-friendly solutions. Let's connect!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="schooling" data-aos="fade-right">
+      <h2><span>Schooling</span></h2>
+      <div class="about-content">
+        <div class="bio">
+          <p>
+            📚 I completed my Schooling at
+            <strong
+              >Saraswati Higher Secondary School Manpur Distt: Umaria
+              M.P.</strong
+            ><br />
+            <br />
+            🎯 Achievements: 🚀 Participated in the
+            <strong>State Level Science Exhibition</strong>, proudly achieving
+            3rd place with my team, showcasing innovation and teamwork at its
+            best. <br />
+            <br />
+            🗓️ Year of Completion: 2023
           </p>
         </div>
       </div>
@@ -346,32 +435,86 @@
 
     <section id="projects" data-aos="fade-up">
       <h2><span>My Projects</span></h2>
-      <div class="card" data-aos="fade-up">
-        <h3>Project One</h3>
-        <p>
-          Detailed description of project one goes here. It’s a responsive web
-          application built using modern web technologies.
-        </p>
-        <a href="https://github.com/Ambar1418" class="project-link"
-          >View on GitHub</a
-        >
+      <div class="main">
+        <div class="card" data-aos="fade-up" data-aos-delay="200">
+          <h3>Project One</h3>
+          <h4>🌦️ Weather Check Web.</h4>
+          <br />
+          <p>
+            The Weather Check App is a sleek and intuitive application designed
+            to provide users with up-to-the-minute weather information for any
+            location worldwide. Built with modern UI principles and backed by
+            reliable weather APIs, ☀️ Live Weather Data: Real-time temperature,
+            humidity, wind speed, and condition icons. 🌍 Global Search:
+            Instantly get weather updates for any city around the world.
+          </p>
+          <a
+            href="https://ambar1418.github.io/weather_app/"
+            target="_blank"
+            class="project-link"
+            >View on GitHub</a
+          >
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="200">
+          <h3>Project Two</h3>
+          <h4>🔹 TalkNet - MY Personal AI Chatbot</h4>
+          <br />
+          <p>
+            TalkNet is a smart, interactive chatbot built to simulate human-like
+            conversations in real time. Designed using modern web technologies
+            and powered by AI logic,🌐 Responsive & user-friendly UI, it can
+            answer questions, provide suggestions, and maintain engaging
+            conversations—making it a valuable tool for both casual users and
+            professional environments.
+          </p>
+          <a
+            href="https://ambar1418.github.io/My_TalkNet/"
+            target="_blank"
+            class="project-link"
+            >View on GitHub</a
+          >
+        </div>
       </div>
-      <div class="card" data-aos="fade-up" data-aos-delay="200">
-        <h3>Project Two</h3>
-        <h4>My To-Do Application</h4>
-        <p>
-          In my To-Do application, I implemented a key event display feature
-          that captures and reacts to keyboard inputs to enhance user
-          interaction. This functionality allows users to perform various tasks
-          with just their keyboard, such as adding new tasks, navigating through
-          the task list, or deleting tasks.
-        </p>
-        <a
-          href="https://ambar1418.github.io/my_web/"
-          target="_blank"
-          class="project-link"
-          >View on GitHub</a
-        >
+      <div class="main">
+        <div class="card" data-aos="fade-up">
+          <h3>Project Three</h3>
+          <h4>🎨 Gradient Color Generator</h4>
+          <br />
+          <p>
+            The Gradient Color Generator is a simple, interactive web tool that
+            allows users to generate beautiful linear-gradient backgrounds with
+            random colors. Users can click on two different buttons to randomly
+            change the two colors used in the gradient. The background of the
+            page updates instantly based on the selected colors, providing a
+            real-time preview. Additionally, users can copy the generated CSS
+            code with a single click to easily use it in their own designs or
+            projects.
+          </p>
+          <a
+            href="https://ambar1418.github.io/color_change/"
+            class="project-link"
+            target="_blank"
+            >View on GitHub</a
+          >
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="200">
+          <h3>Project Four</h3>
+          <h4>📱 My To-Do Application</h4>
+          <br />
+          <p>
+            In my To-Do application, I implemented a key event display feature
+            that captures and reacts to keyboard inputs to enhance user
+            interaction. This functionality allows users to perform various
+            tasks with just their keyboard, such as adding new tasks, navigating
+            through the task list, or deleting tasks.
+          </p>
+          <a
+            href="https://ambar1418.github.io/my_web/"
+            target="_blank"
+            class="project-link"
+            >View on GitHub</a
+          >
+        </div>
       </div>
     </section>
 
@@ -386,11 +529,6 @@
       <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
         <h3>JavaScript</h3>
         <p>Creating interactive features and solving complex problems</p>
-      </div>
-
-      <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
-        <h3>React</h3>
-        <p>Developing dynamic single-page applications</p>
       </div>
 
       <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
@@ -417,40 +555,81 @@
       <h2><span>Contact Me</span></h2>
       <p>If you'd like to get in touch, feel free to reach out!</p>
       <br />
+      <br />
       <a href="mailto:raj@example.com" class="btn">Send an Email</a>
+      <br />
+      <br />
       <div style="margin-top: 1.5rem; font-size: 1.8rem">
-        <a
+      <div class="icon-section">
+        <div class="icon-container linkedin">
+          <a
           href="https://www.linkedin.com/in/ambar-gupta-095347291/"
           target="_blank"
           style="margin: 0 1rem; color: #0077b5"
-          ><i class="fab fa-linkedin"></i
-        ></a>
-        <a
+          >
+          <i class="fab fa-linkedin icon"></i>
+          <span>LinkedIn</span>
+        </div>
+        <div class="icon-container instagram">
+          <a
+          href="https://www.instagram.com/ambr.gpt"
+          target="_blank"
+          style="margin: 0 1rem; color: #c20b0b"
+        >
+          <i class="fab fa-instagram icon"></i>
+          <span>Instagram</span>
+        </div>
+        <div class="icon-container github">
+          <a
+          href="https://github.com/ambar1418"
+          target="_blank"
+          style="margin: 0 1rem; color: #f3e872"
+        >
+          <i class="fab fa-github icon"></i>
+          <span>GitHub</span>
+        </div>
+        <div class="icon-container leetcode">
+          <a
           href="https://leetcode.com/u/cqh92hexfD"
           target="_blank"
-          style="margin: 0 1rem; color: #ffa116"
-          ><i class="fa-solid fa-code"></i
-        ></a>
-        <section id="testimonials">
-          <h2>Testimonials</h2>
-          <div class="card">
-            <p>
-              "Ambar is a brilliant developer with exceptional problem-solving
-              skills!"
-            </p>
-            <h4>– Professor XYZ</h4>
-          </div>
-        </section>
+          style="margin: 0 1rem; color: #eea108"
+          >
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" class="custom-svg">
+          <span>LeetCode</span>
+        </div>
+        <div class="icon-container gfg">
+          <a
+          href="https://www.geeksforgeeks.org/user/itsambbozo/"
+          target="_blank"
+          style="margin: 0 1rem; color: #7b16ff">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/GeeksforGeeks.svg" alt="GFG" class="custom-svg">
+          <span>GeeksforGeeks</span>
+        </div>
+        <div class="icon-container hackerearth">
+          <a
+          href="https://www.hackerearth.com/@itsambar14/"
+          target="_blank"
+          style="margin: 0 1rem; color: #4bd2f3"
+        > <i class="fas fa-laptop-code hackerearth" title="HackerEarth"></i>
+          <span>HackerEarth</span>
+        </div>
+       <div class="icon-container codolio">
+        <a
+          href="https://codolio.com/profile/Steve"
+          target="_blank"
+          style="margin: 0 1rem; color: #e9427f"
+        > <i class="fas fa-user-astronaut codolio" title="Codolio"></i>
+        <span>Codolio</span>
+       </div>
+      </div>
       </div>
     </section>
     <footer>
       <p>&copy; 2025 Ambar. All rights reserved.</p>
     </footer>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- JavaScript: Load AOS and initialize -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      // Initialize AOS animation
       AOS.init({
         duration: 1000, // duration of animation in ms
         once: true, // animate only once when scrolling down
