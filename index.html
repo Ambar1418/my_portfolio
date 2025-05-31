@@ -13,19 +13,96 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true
+      });
+    </script>
     <style>
       * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
       }
-
+      div strong{
+        color: #fbc2c2;
+      }
       body {
         font-family: "Poppins", sans-serif;
         color: #ddd;
         scroll-behavior: smooth;
       }
+ body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #0f172a;
+  font-family: 'Arial', sans-serif;
+  color: white;
+}
 
+.particles-bg {
+
+      #hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: transparent;
+      }
+
+      #hero .particles-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+      }
+
+      #hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: white;
+      }
+
+      #hero p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        color: white;
+      }
+
+      #hero .btn {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        color: white;
+        background: #0077b5;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background 0.3s ease;
+      }
+
+      #hero .btn:hover {
+        background: #005a90;
+      }
+
+      .content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        padding-top: 20%;
+        background: rgba(0, 0, 0, 0.5);
+      }
+  padding-top: 20%;
+  background: rgba(0, 0, 0, 0.5);
+}
       header {
         background: #111;
         color: white;
@@ -36,7 +113,7 @@
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         position: fixed;
         top: 0;
-        width: 100%;
+        width: 95%;
         z-index: 1000;
       }
 
@@ -48,14 +125,14 @@
       }
 
       nav a:hover {
-        color: #99f2c8;
+        color: #f68989;
       }
       .main {
         display: flex;
       }
 
       #hero {
-        height: 100vh;
+        height: 0vh;
         background: linear-gradient(to right, #ddf50a, #ca99f2);
         color: white;
         display: flex;
@@ -70,17 +147,17 @@
         0% {
           transform: scale(0.5);
           opacity: 0;
-          background: linear-gradient(45deg, #ff5733, #f39c12);
+          background: linear-gradient(45deg, #4e3934, #574830);
         }
         50% {
           transform: scale(1.2);
           opacity: 0.8;
-          background: linear-gradient(45deg, #f39c12, #3498db);
+          background: linear-gradient(45deg, #150d00, #152027);
         }
         100% {
           transform: scale(1);
           opacity: 1;
-          background: linear-gradient(45deg, #3498db, #2ecc71);
+          background: linear-gradient(45deg, #2c3134, #202b25);
         }
       }
       #hero h1 {
@@ -95,12 +172,12 @@
         0% {
           transform: scale(0.5);
           opacity: 0;
-          background: linear-gradient(45deg, #141f49, #f39c12);
+          background: linear-gradient(45deg, #141f49, #352813);
         }
         50% {
           transform: scale(1.2);
           opacity: 0.8;
-          background: linear-gradient(45deg, #181208, #3498db);
+          background: linear-gradient(45deg, #181208, #233847);
         }
         100% {
           transform: scale(1);
@@ -287,16 +364,82 @@
     .icon-section {
       display: flex;
       justify-content: center;
-      gap: 50px;
-      align-items: center;
+      gap: 1.5rem;
       flex-wrap: wrap;
+      margin-top: 1.5rem;
+      padding: 1rem;
+      z-index: 1;
+      position: relative;
     }
+
     .icon-container {
       display: flex;
       flex-direction: column;
       align-items: center;
-      color: white;
+      text-align: center;
+      transition: all 0.3s ease;
+      min-width: 120px;
       font-size: 14px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .icon-container a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      text-decoration: none;
+      color: #0077b5;
+      margin: 0 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .icon-container a:hover {
+      transform: translateY(-5px);
+    }
+
+    .icon-container i,
+    .icon-container img {
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+    }
+
+    .icon-container span {
+      font-size: 0.9rem;
+      color: #ddd;
+    }
+
+    .icon-container a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      text-decoration: none;
+      color: #0077b5 !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      position: relative;
+      z-index: 3;
+    }
+
+    .icon-container i,
+    .icon-container img {
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+      opacity: 1 !important;
+      visibility: visible !important;
+      position: relative;
+      z-index: 4;
+    }
+
+    .icon-container span {
+      font-size: 0.9rem;
+      color: #ddd !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      position: relative;
+      z-index: 4;
     }
     .icon {
       font-size: 40px;
@@ -326,7 +469,7 @@
         animation: lightBoom 0.6s ease-in-out;
         text-shadow: 0 0 10px rgba(67, 5, 30, 0.7),
           0 0 20px rgba(17, 2, 47, 0.6), 0 0 30px rgba(0, 255, 200, 0.5);
-        color: #169a65;
+        color: #f7a3a3;
         transition: text-shadow 0.3s ease;
       }
       .custom-svg {
@@ -366,8 +509,9 @@
     </style>
   </head>
   <body>
+    <div id="tsparticles" class="particles-bg"></div>
     <header>
-      <div><strong>Ambar</strong></div>
+      <div><strong>Ambar Gupta</strong></div>
       <nav>
         <a href="#hero">Home</a>
         <a href="#about">About</a>
@@ -382,7 +526,7 @@
       <p data-aos="fade-up">Student | Tech Enthusiast | Problem Solver</p>
       <a href="#projects" class="btn" data-aos="zoom-in">View Projects</a>
       <a
-        href="/Users/prashant/Downloads/ag.pdf"
+        href="/ag.pdf"
         target="_blank"
         rel="noopener noreferrer"
         class="btn-outline"
@@ -390,7 +534,19 @@
         View Resume
       </a>
     </section>
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <section id="about" data-aos="fade-left">
       <h2><span>About Me</span></h2>
       <div class="about-content">
@@ -627,6 +783,7 @@
     <footer>
       <p>&copy; 2025 Ambar. All rights reserved.</p>
     </footer>
+     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -647,6 +804,43 @@
         });
       });
       console.log("Welcome to Ambar's Portfolio 🚀");
+       tsParticles.load("tsparticles", {
+  background: {
+    color: {
+      value: "#0f172a"
+    }
+  },
+  fpsLimit: 60,
+  particles: {
+    number: {
+      value: 80
+    },
+    color: {
+      value: "#ffffff"
+    },
+    links: {
+      enable: true,
+      color: "#ffffff",
+      distance: 150,
+      opacity: 0.5
+    },
+    move: {
+      enable: true,
+      speed: 2
+    },
+    size: {
+      value: 2
+    }
+  },
+  interactivity: {
+    events: {
+      onHover: {
+        enable: true,
+        mode: "repulse"
+      }
+    }
+  }
+});
     </script>
   </body>
 </html>
